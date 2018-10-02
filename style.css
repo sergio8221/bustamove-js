@@ -1,0 +1,32 @@
+
+body{
+    background-color: coral;
+}
+
+#scene{
+    background-color: lightcyan;
+    width: 30rem;
+    height: 45rem;
+    position: relative;
+    margin: 0 auto;
+}
+
+#arrow{
+    background-color: black;
+    width: 20px;
+    height: 100px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: rotateZ(0);
+    transform-origin: center bottom;
+}
+
+#box{
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
