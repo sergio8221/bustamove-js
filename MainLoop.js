@@ -1,19 +1,23 @@
-var box = document.getElementById('box'), // the box
-    boxX = 50, // the box's position
-    boxY = 50,
-    boxVelocity = 0.5, // the box's velocity
-    delta = 0,
-    lastFrameTimeMs = 0,
-    direction = 0, //dirección en la que moverse en el siguiente frame
-    move = false, //moverse en el siguiente frame
-    limit = 1000; // how far the box can go before it switches direction
+
+var delta = 0; //Time since last frame
+var lastFrameTimeMs = 0; // Last frame time since whenever
+
+var shootBall = false; //Shoot ball on next frame?
 
 //Flecha
 var flecha = document.getElementById('arrow');
-var rotFlecha = 0;
-var dirFlecha = 0;
-var velFlecha = 0.5;
-var rotaFlecha = false;
+var rotFlecha = 0; // Ángulo de la flecha
+var dirFlecha = 0; // Dirección de rotación
+var velFlecha = 0.5; // Velocidad de rotación
+var rotaFlecha = false; // Rotar en el siguiente frame
+
+//Bola
+var ball = document.getElementById('ball');
+var ballX = 50; // Ball's position
+var ballY = 50;
+var ballSpeed = 0.5; // Ball's Speed
+var ballDirection = 0; //Ball's direction
+var moveBall = false; //Move on next frame?
 
 window.addEventListener('keydown', function (event) {
     switch (event.key) {
@@ -25,13 +29,20 @@ window.addEventListener('keydown', function (event) {
             dirFlecha = 1;
             rotaFlecha = true;
             break;
+        case "Space":
+            shootBall = true;
+            break;
+
     }
 })
 
+// Start things off
+requestAnimationFrame(mainLoop);
+
 function draw() {
-    box.style.left = boxX + 'px';
-    box.style.top = boxY + 'px';
-    arrow.style.transform = "rotateZ(" + rotFlecha + "deg)";
+    ball.style.left = ballX + 'px';
+    ball.style.top = ballY + 'px';
+    arrow.style.transform = "translateX(-50%) rotateZ(" + rotFlecha + "deg)";
 }
 
 function update(delta) {
@@ -63,6 +74,3 @@ function mainLoop(timestamp) { //timestamp se lo pasa requestAnimationFrame
     draw();
     requestAnimationFrame(mainLoop);
 }
-
-// Start things off
-requestAnimationFrame(mainLoop);

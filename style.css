@@ -13,20 +13,22 @@ body{
 
 #arrow{
     background-color: black;
-    width: 20px;
-    height: 100px;
+    width: 1rem;
+    height: 5rem;
     position: absolute;
-    bottom: 10px;
+    bottom: 2rem;
     left: 50%;
-    transform: rotateZ(0);
+    transform: translateX(-50%) rotateZ(0);
     transform-origin: center bottom;
 }
 
-#box{
+#ball{
     background-color: blue;
-    width: 100px;
-    height: 100px;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
     position: absolute;
-    top: 50px;
-    left: 50px;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
 }
