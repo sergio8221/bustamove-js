@@ -1,7 +1,9 @@
 //Constants
 const maxAngle = 60; //max angle of shooting arrow
+const arrowSpeed = 0.03; //Arrow rotation speed
 const rows = 16; //Max rows of stacked balls
 const cols = 11; //Max cols of stacked balls
+
 
 //Variables
 let delta = 0; //Time since last frame

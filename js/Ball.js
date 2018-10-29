@@ -8,6 +8,7 @@ function Ball(id) {
     this.speed = 0.1; // Ball's Speed
     this.direction = 0; //Ball's direction in degrees
     this.moveNext = false; //Move on next frame?
+
     this.add = function (id) { //Add ball to html
         scene.element.insertAdjacentHTML("beforeend", `
         <div id="${this.id}" class="ball"></div>
@@ -15,6 +16,20 @@ function Ball(id) {
         this.element = document.getElementById(this.id);
         this.element.style.backgroundColor = this.color;
     };
+
+    this.placeBall = function(){
+        this.x = (Math.round(this.x/6) * 6) + 3;
+        scene.stackedBalls[0][(this.x-3)/6] = this;
+    };
+
+    this.checkCollisions = function(){
+        scene.stackedBalls.forEach((row)=>{
+            row.forEach(ball => {
+               //Comprobar la distancia con cada una de las bolas
+            });
+        });
+    };
+
     this.update = function () {
         if (this.moveNext) {
             this.x += Math.sin(Math.radians(this.direction)) * this.speed * delta;
@@ -31,9 +46,11 @@ function Ball(id) {
             if (this.y >= scene.height - 6) { //if touches top side
                 this.y = scene.height - 6;
                 this.moveNext = false;
+                this.placeBall();
             }
         }
     };
+
     this.draw = function () {
         this.element.style.left = this.x + 'vh';
         this.element.style.bottom = this.y + 'vh';

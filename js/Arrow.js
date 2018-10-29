@@ -3,7 +3,7 @@ function Arrow() {
     this.element = document.getElementById('arrow');
     this.angle = 0; // Ángulo de la flecha
     this.moveDirection = 0; // Dirección de rotación -> 0:left, 1:right
-    this.moveSpeed = 0.1; // Velocidad de rotación
+    this.moveSpeed = arrowSpeed; // Velocidad de rotación
     this.moveNext = false; // Rotar en el siguiente frame
     this.update = function () {
         if (this.moveNext) {
