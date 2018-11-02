@@ -22,7 +22,6 @@ function Scene() {
         //Move from nextBalls to balls
         let shotBall = this.nextBalls.shift();
         shotBall.direction = direction;
-        console.log(direction);
         shotBall.moveNext = true;
         this.balls.push(shotBall);
 

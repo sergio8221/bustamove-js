@@ -79,7 +79,7 @@ table {
 
 #table > tr:nth-of-type(odd) > td {
     border: 1px solid green;
-    border-radius: 50%;
+    /*border-radius: 50%;*/
     box-sizing: border-box;
     width: 6vh;
     height: 6vh;
@@ -101,7 +101,7 @@ table {
 
 #table2 > tr:nth-of-type(odd) > td {
     border: 1px solid red;
-    border-radius: 50%;
+    /*border-radius: 50%;*/
     box-sizing: border-box;
     width: 6vh;
     height: 6vh;
